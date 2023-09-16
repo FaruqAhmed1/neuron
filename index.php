@@ -10,34 +10,10 @@
 
 		<title>Neuron Finance</title>
 
-        <!--  favicon -->
-        <link rel="shortcut icon" href="assets/img/ico/favicon.png">
-        <!--  apple-touch-icon -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/img/ico/apple-touch-icon-57-precomposed.png">
+        
 
-		<!-- animate CSS -->
-		<link rel="stylesheet" href="assets/css/animate.min.css" media="all" />
-		<!-- FontAwesome CSS -->
-		<link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css" media="all" />
-		<!-- Owl Carousel -->
-		<link rel="stylesheet" href="assets/css/owl.carousel.min.css" media="all" />
-		<!-- Bootsnav Menu -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css" media="all" />
-		<!-- Bootstrap -->
-		<link rel="stylesheet"  href="assets/bootstrap/css/bootstrap.min.css" media="all" />
-		<!-- Style CSS -->
-		<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+		<?php wp_head(  ); ?>
 
-
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
 	</head>
 
 
@@ -460,7 +436,7 @@
 		</footer>
 
 		<!-- preloader -->
-		<div id="loading">
+		<!-- <div id="loading">
 			<div id="loading-center">
 				<div id="loading-center-absolute">
 					<div class="object" id="object_four"></div>
@@ -469,16 +445,8 @@
 					<div class="object" id="object_one"></div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-		<!-- main jQuery -->
-		<script src="assets/js/jquery-2.1.3.min.js"></script>
-		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/js/bootsnav.js"></script>
-		<script src="assets/js/owl.carousel.min.js"></script>
-		<script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/ajaxchimp.js"></script>
-        <script src="assets/js/ajaxchimp-config.js"></script> 
-		<script src="assets/js/script.js"></script>
+		<?php wp_footer( ); ?>
 	</body>
 </html>
