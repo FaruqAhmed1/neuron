@@ -12,7 +12,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: neuron
 Tags: right-sidebar,custom-background, custom-header, custom-menu,editor-style, featured-images, sticky-post, threaded-comments, translation-ready
 
-sadakalo is distributed under the terms of the GNU GPL
 
 
 
@@ -301,6 +300,35 @@ input:-webkit-autofill:focus {
 
 
 /* ================ Navigation ================== */
+
+.nav.navbar-nav ul.sub-menu {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    list-style: none;
+    background: #fff;
+    width: 300px;
+    left: 0;
+	margin-top: 30px;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;   
+}
+.nav.navbar-nav ul.sub-menu li{
+	border: 1px solid #ddd;
+}
+.nav.navbar-nav ul.sub-menu li a {
+	color: #333;
+	padding: 8px 15px;
+	display: block
+}
+.nav.navbar-nav li:hover ul.sub-menu {
+	opacity: 1;
+	visibility: visible;
+	margin-top: 0;
+	z-index: 99;
+}
+
 
 nav.navbar.bootsnav ul.nav > li > a {
 	color: #3f4b5a;
