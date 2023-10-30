@@ -62,11 +62,12 @@ add_action( 'wp_enqueue_scripts','neuron_enqueue_scripts' );
 
 function neuron_custom_posts() {
 
+  //Slider
    $labels = array(
 
-      'name'                     => __( 'Slides', 'TEXTDOMAINHERE' ),
-      'singular_name'            => __( 'Slide', 'TEXTDOMAINHERE' ),
-      'add_new'                  => __( 'Add New', 'TEXTDOMAINHERE' ),
+      'name'                     => __( 'Slides', 'neuron' ),
+      'singular_name'            => __( 'Slide', 'neuron' ),
+      'add_new'                  => __( 'Add New', 'neuron' ),
    );
    $args = array(
       'labels'     => $labels,
@@ -75,7 +76,42 @@ function neuron_custom_posts() {
       'supports'   => array( 'title', 'editor', 'revisions','custom-fields','thumbnail','page-attributes' ),
 
    );
-
    register_post_type( 'slide', $args );
+
+   //Feature
+   $labels = array(
+
+    'name'                     => __( 'Features', 'neuron' ),
+    'singular_name'            => __( 'Feature', 'neuron' ),
+    'add_new'                  => __( 'Add New', 'neuron' ),
+ );
+
+   $argss = array(
+    'labels'     => $labels,
+    'public'     => false,
+    'show_ui'    => true,
+    'supports'   => array( 'title', 'editor', 'revisions','thumbnail','page-attributes' ),
+
+ );
+
+   register_post_type( 'feature', $argss );
+
+
+   //Service
+   $labels = array(
+
+    'name'                     => __( 'Services', 'neuron' ),
+    'singular_name'            => __( 'Service', 'neuron' ),
+    'add_new'                  => __( 'Add New', 'neuron' ),
+  );
+   $arg = array(
+    'labels'     => $labels,
+    'public'     => false,
+    'show_ui'    => true,
+    'supports'   => array( 'title', 'editor', 'revisions','custom-fields','thumbnail','page-attributes' ),
+
+ );
+
+   register_post_type( 'service', $arg );
 }
 add_action( 'init', 'neuron_custom_posts' );
