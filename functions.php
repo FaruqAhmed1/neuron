@@ -96,7 +96,6 @@ function neuron_custom_posts() {
 
    register_post_type( 'feature', $argss );
 
-
    //Service
    $labels = array(
 
@@ -115,3 +114,36 @@ function neuron_custom_posts() {
    register_post_type( 'service', $arg );
 }
 add_action( 'init', 'neuron_custom_posts' );
+
+function neuron_widgets_init() {
+
+    register_sidebar( array(
+		'name'          => __( 'Footer One', 'neuron' ),
+		'id'            => 'footer-1',
+		'description'   => __( 'Footer one', 'neuron' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+    register_sidebar( array(
+		'name'          => __( 'Footer Two', 'neuron' ),
+		'id'            => 'footer-2',
+		'description'   => __( 'Footer Two', 'neuron' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+    register_sidebar( array(
+		'name'          => __( 'Footer Three', 'neuron' ),
+		'id'            => 'footer-3',
+		'description'   => __( 'Footer Three', 'neuron' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+}
+add_action( 'widgets_init', 'neuron_widgets_init' );
