@@ -147,3 +147,36 @@ function neuron_widgets_init() {
 
 }
 add_action( 'widgets_init', 'neuron_widgets_init' );
+add_filter('widget_text', 'do_shortcode');
+
+function neuron_latest_posts( $atts ){
+    $atts = shortcode_atts( array(
+        'count' => 4
+
+    ),$atts );
+
+    $query = new WP_Query( 
+         array(
+            'posts_per_page' => $atts['count'],
+            'post-type' => 'post',
+
+         )
+         );
+    $latest_post = '<ul>';
+    if( $query->have_posts( )) {
+        while( $query->have_posts(  ) ){
+            $post_ids = get_the_ID( );
+            $query->the_post(  );
+            $latest_post .= '<li>'.
+            get_the_post_thumbnail( $post_ids,'thumbnail' ).'
+            <p><a href="'.get_permalink().'">'.get_the_title().'</a></p>
+            <span>'.get_the_date( 'd F Y',$post_ids ).'</span>
+            </li>';
+        }
+    }
+    $latest_post .= '</ul>';
+    wp_reset_query();
+    return $latest_post;
+}
+
+add_shortcode( 'nlatest_posts','neuron_latest_posts' );

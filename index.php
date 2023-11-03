@@ -338,28 +338,11 @@
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-3">
 							<div class="footer-widget latest-post">
-								<h3>Latest Post</h3>
-								<ul>
-									<li>
-										<img src="<?php echo get_template_directory_uri();  ?>/assets/img/latest-post/1.png" alt="" />
-										<p><a href="#">Headset No Longer Wire For Sound</a></p>
-										<span>12 May 2016</span>
-										
-									</li>
-									<li>
-										<img src="<?php echo get_template_directory_uri();  ?>/assets/img/latest-post/2.png" alt="" />
-										<p><a href="#">Headset No Longer Wire For Sound</a></p>
-										<span>12 May 2016</span>
-										
-									</li>
-									<li>
-										<img src="<?php echo get_template_directory_uri();  ?>/assets/img/latest-post/3.png" alt="" />
-										<p><a href="#">Headset No Longer Wire For Sound</a></p>
-										<span>12 May 2016</span>
-										
-									</li>
-									
-								</ul>
+								<?php
+								if( is_active_sidebar('footer-3') ){
+									dynamic_sidebar( 'footer-3' );
+								}
+								 ?>
 							</div>
 						</div><!-- end single footer widget -->
 						
