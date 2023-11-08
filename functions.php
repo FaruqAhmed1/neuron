@@ -144,6 +144,15 @@ function neuron_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+    register_sidebar( array(
+		'name'          => __( 'Footer Four', 'neuron' ),
+		'id'            => 'footer-4',
+		'description'   => __( 'Footer Four', 'neuron' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 
 }
 add_action( 'widgets_init', 'neuron_widgets_init' );
@@ -165,7 +174,7 @@ function neuron_latest_posts( $atts ){
     $latest_post = '<ul>';
     if( $query->have_posts( )) {
         while( $query->have_posts(  ) ){
-            $post_ids = get_the_ID( );
+            $post_ids = get_the_ID();
             $query->the_post(  );
             $latest_post .= '<li>'.
             get_the_post_thumbnail( $post_ids,'thumbnail' ).'
